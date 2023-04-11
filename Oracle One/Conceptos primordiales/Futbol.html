@@ -20,10 +20,10 @@
             skipline()
         }
 
-        var victorias = prompt (" Ingrese lacantidad de victorias ")
-        var empates =prompt (" Ingrese la cantidad de empates ")
+        var victorias = parseInt(prompt (" Ingrese lacantidad de victorias "))
+        var empates =parseInt(prompt (" Ingrese la cantidad de empates "))
 
-        puntostotales = victorias + empates
+        puntostotales = (victorias*3) + empates
 
         doc("La cantidad de puntos son" + puntostotales)
     </script>
