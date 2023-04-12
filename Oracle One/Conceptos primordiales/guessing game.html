@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                function skipline() {
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+        }
+        function doc(frase) {
+            document.write(frase)
+            skipline()
+        }
+
+        var numeropensado = Math.round(Math.random()*10)
+        var numerolanzado = parseInt(prompt("Ingresar un numero entre el 0 y el 10"))
+
+        if (numeropensado == numerolanzado){
+
+            doc(" Usted acerto ")
+        }
+
+        else {
+
+            doc("Usted erro, el numero era el " + numeropensado )
+        }
+    </script>
+</html>
