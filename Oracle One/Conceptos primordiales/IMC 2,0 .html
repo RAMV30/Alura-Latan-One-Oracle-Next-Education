@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+    
+        <h1>Calcualdora IMC</h1>
+    
+        <script>
+            function skipline (){
+                document.write ("<br>")
+                document.write ("<br>")
+                document.write ("<br>")
+            }
+
+            function doc(frase){
+                document.write(frase)
+                skipline()
+            }
+    
+            function calcularimc(peso,altura){
+                return (peso / (altura*altura))
+            }
+
+            nombre = prompt (" Ingrese su nombre ")
+            pesoinformado = prompt ( +nombre+ (" ingrese su peso "))
+            alturainformada= prompt ( +nombre+ (" ingrese su altura "))
+
+            imccalculado = calcularimc(pesoinformado,alturainformada)
+
+            doc(nombre + " , su IMC es de " + imccalculado)
+
+            if (imccalculado < 18.5){
+                doc("IMC bajo de lo remendado")
+            }
+            if(imccalculado >= 18.5){
+                if (imccalculado < 20){
+                    doc("Dentro del intervalo normal")
+                    }
+                }
+            if(imccalculado >= 25){
+                if(imccalculado < 30){
+                    doc("Considerado como sobre peso")
+                }
+            }
+            if(imccalculado >= 30){
+                doc("Gordo grasoso baja de peso")
+            }
+        </script>
+    </body>
+</html>
