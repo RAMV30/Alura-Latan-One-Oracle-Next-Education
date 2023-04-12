@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcualr los puntos de un equipo de soccer</h1>
+    <script>
+        function skipline() {
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+        }
+        function doc(frase) {
+            document.write(frase)
+            skipline()
+        }
+
+        var victorias = parseInt(prompt (" Ingrese lacantidad de victorias "))
+        var empates =parseInt(prompt (" Ingrese la cantidad de empates "))
+
+        var puntostotales = (victorias *3) + empates
+
+        doc(" La cantidad de puntos son " + puntostotales)
+         
+        if (puntostotales > 30){
+
+            doc("El equipo esta mejor que el año pasado")
+        }
+
+        if (puntostotales < 30) {
+
+            doc("El equipo esta peor que el año pasado")
+        }
+
+        if(puntostotales == 30) {
+
+            doc("Elequipo esta igual que el año pasado")
+        }
+    </script>
+</body>
+</html>
