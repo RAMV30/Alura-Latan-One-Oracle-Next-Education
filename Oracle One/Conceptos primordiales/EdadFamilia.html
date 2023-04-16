@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function skipline() {
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+            document.write ("<br>")
+        }
+        function doc(frase) {
+            document.write(frase)
+            skipline()
+        }
+
+        var numeroMiembros = parseInt(prompt("Ingrese la cantidad de miembros de su familia"));
+        var edades = []; // Array para almacenar las edades
+
+        for (var i = 0; i < numeroMiembros; i++) {
+
+            var edad = parseInt(prompt("Ingrese la edad de la persona " + (i + 1)));
+            edades.push(edad); // Agregar la edad al array
+        }
+
+        console.log(edades); // Imprimir el array de edades
+
+    </script>
+</body>
+</html>
