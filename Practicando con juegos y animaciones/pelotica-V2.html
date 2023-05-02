@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");    
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400);
+
+        var radio = 10
+        var xRandom
+        var yRandom
+
+
+        //Diseña una circunferencia en el canvas con un radio, posición y color específicos.
+        function designCircumference(x,y,radio,color){
+
+            pincel.fillStyle = color
+            pincel.beginPath();
+            pincel.arc(x,y,radio,0,2*Math.PI);
+            pincel.fill();     
+        }
+
+
+        //Borra el contenido del canvas.
+        function cleanScreen(){
+
+            pincel.clearRect(0,0,600,400)
+        }
+
+
+        
+        var x = 0
+
+
+
+        /*Diseña un objetivo compuesto por tres circunferencias concéntricas, 
+        con colores y tamaño específicos, en una posición específica.*/
+        function designObjetive(x,y){
+
+        designCircumference(100,100,radio + 20,"red")
+        designCircumference(100,100,radio + 10,"white")
+        designCircumference(100,100,radio,"red")
+
+        }
+
+
+
+        // Devuelve un número aleatorio dentro de un rango máximo especificado.
+        function changeLocation(maximo){
+
+            return Math.floor(Math.random()*maximo)
+        }
+
+
+
+        /*Borra el contenido del canvas, genera una posición aleatoria 
+        y dibuja el objetivo en esa posición, y actualiza una variable "x".*/
+        function updateScreen(){
+
+            cleanScreen()
+            xRandom = changeLocation(600)
+            yRandom = changeLocation(400)
+            designObjetive(xRandom,yRandom)
+            x++
+        }
+
+
+        setInterval(updateScreen,1000)
+
+
+        setInterval(updateScreen,1000)
+        
+
+        function shoot (evento){
+
+            var x = evento.pagex = pantalla.offsetLeft
+            var y = evento.pagey = pantalla.offsetTop
+
+            if ((x < xRandom + radio) &&
+                (x > xRandom - radio) &&
+                (y < yRandom + radio) &&
+                (y > yRandom - radio))
+            
+            alert("Bien Hecho")
+        }
+
+
+
+        pantalla.onclick = shoot
+
+
+    </script>
+</body>
+</html>

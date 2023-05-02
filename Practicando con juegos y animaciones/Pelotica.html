@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+
+        /* Este código HTML y JavaScript dibuja un rectángulo de color gris claro en un canvas 
+        con una anchura de 600 píxeles y una altura de 400 píxeles.
+
+        -La primera línea de JavaScript selecciona el elemento canvas del documento HTML.
+        -La segunda línea obtiene el contexto de dibujo 2D del canvas.
+        -La tercera línea establece el color de relleno en gris claro utilizando el atributo fillStyle del contexto de dibujo 2D.
+        -La cuarta línea dibuja un rectángulo en la posición (0, 0) del canvas
+        con una anchura de 600 píxeles y una altura de 400 píxeles utilizando la función fillRect del contexto de dibujo 2D.*/
+        
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");    
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400);
+
+
+        /* La función designCircumference dibuja una circunferencia en la posición (x, y) con un radio dado en píxeles. 
+        Se utiliza el contexto de dibujo 2D del canvas y se establece el color de relleno en azul. */
+
+        function designCircumference(x,y,radio){
+
+            pincel.fillStyle = ("Blue")
+            pincel.beginPath();
+            pincel.arc(x,y,radio,0,2*Math.PI);
+            pincel.fill();     
+        }
+
+
+        /* La función cleanScreen borra todo el contenido del canvas utilizando la función clearRect del contexto de dibujo 2D. */
+
+        function cleanScreen(){
+
+            pincel.clearRect(0,0,600,400)
+        }
+        
+        var x = 0
+
+
+        /* La función updateScreen borra el contenido del canvas, dibuja una circunferencia en una nueva posición horizontal (x+1, 20) 
+        y aumenta el valor de x en 1 en cada iteración. La función se ejecuta repetidamente cada 5 milisegundos  
+        utilizando setInterval para crear una animación en bucle. */
+
+        function updateScreen(){
+
+            cleanScreen()
+            designCircumference(x,20,10)
+            x++
+        }
+
+        setInterval(updateScreen,5)
+
+    </script>
+</body>
+</html>

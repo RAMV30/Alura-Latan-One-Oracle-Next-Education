@@ -1,0 +1,33 @@
+ //para no poner todas esta funciones folo se añade color alos parametros de la funcion y ya
+ //la forma mas sencilla esta en bordes
+
+          function drawSquareYelow(x,y){
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = 'yellow';
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = 'black'; 
+            pincel.strokeRect(x, y, 50, 50);
+        }
+
+        function drawSquareBlue(x,y){
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = 'blue';
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = 'black'; 
+            pincel.strokeRect(x, y, 50, 50);
+        }
+
+        function drawSquareRed(x,y){
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = 'red';
+            pincel.fillRect(x, y, 50, 50);
+            pincel.strokeStyle = 'black'; 
+            pincel.strokeRect(x, y, 50, 50);
+        }
+
+        drawSquareYelow(0,0)
+        drawSquareBlue(0,50)
+        drawSquareRed(0,100)
